@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import SearchList from './SearchList';
 import './SearchBox.css';
 
 const SearchBox = () => {
-   const [ input, setInput] = useState('');
+   const [ input, setInput] = useState('programming languages');
    const [ results, setResults] = useState([]);
 
    const API_URL = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&origin=*`
 
-   const onSearch = () => {
+   function onSearch(){
      fetch(`${API_URL}&srsearch=${input}`)
      .then(resp => resp.json())
      .then(data => {
@@ -18,6 +18,10 @@ const SearchBox = () => {
      })
      .catch(error => console.log(error));     
    }
+
+   useEffect(() => {
+    onSearch()
+  }, [input]);
 
    const onChange = (event) => {
      setInput(event.target.value);

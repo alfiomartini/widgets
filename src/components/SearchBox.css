@@ -4,3 +4,7 @@
   justify-content: center;
   margin: 20px;
 }
+
+.search-box input {
+  width: 280px;
+}
