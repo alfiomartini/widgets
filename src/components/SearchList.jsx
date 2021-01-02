@@ -5,12 +5,16 @@ import ReactHtmlParser from 'react-html-parser';
 const SearchList = ({results}) => {
   const messageList = results.map((item, index) => {
     return(
-     <div class="ui message" key={index}>
-       <div className="header">
-         {item.title}
-       </div>
-       <p>{ReactHtmlParser(item.snippet)}</p>
-     </div>
+      <a href={`https://en.wikipedia.org/?curid=${item.pageid}`} 
+        target='bkank_' key={index}>
+        <div className="ui message" >
+          <div className="header">
+            {item.title}
+          </div>
+          <p>{ReactHtmlParser(item.snippet)}</p>
+        </div>
+      </a>
+     
     )
   });
 
