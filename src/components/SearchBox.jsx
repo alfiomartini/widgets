@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, useCallback } from 'react';
 import SearchList from './SearchList';
 import './SearchBox.css';
 
@@ -6,35 +6,45 @@ const SearchBox = () => {
    const [ input, setInput] = useState('programming languages');
    const [ results, setResults] = useState([]);
    const [ timeoutId, setTimeoutId] = useState(null);
+   const [ debounced, setDebounced] = useState('programming languages');
 
    const API_URL = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&origin=*`
 
-   const getWiki = () => {
-    fetch(`${API_URL}&srsearch=${input}`)
-    .then(resp => resp.json())
-    .then(data => {
-      const results = data.query.search;
-      console.log(results);
-      setResults(results);
-    })
-    .catch(error => console.log(error));  
-   }
+  //see: https://stackoverflow.com/questions/62601538/react-useeffect-passing-a-function-in-the-dependency-array
+   const getWiki = useCallback(
+    () => {
+      fetch(`${API_URL}&srsearch=${debounced}`)
+      .then(resp => resp.json())
+      .then(data => {
+        const results = data.query.search;
+        console.log(results);
+        setResults(results);
+      })
+      .catch(error => console.log(error));  
+     }, [API_URL, debounced]
+   ) 
 
-   function onSearchDelay(){
-     if (!input.trim()){
-       return;
-     }
+  //  function onSearchDelay(){
+  //    if (!input.trim()){
+  //      return;
+  //    }
 
-     if (input.trim() && !results.length){ // first time rendering
-       getWiki()
-     } 
-     else{
-      setTimeoutId(setTimeout(getWiki, 500));  
-     }
-   }
+  //    if (input.trim() && !results.length){ // first time rendering
+  //      getWiki()
+  //    } 
+  //    else{
+  //     setTimeoutId(setTimeout(getWiki, 500));  
+  //    }
+  //  }
 
    function onSearch(){
      if (input.trim()) {
+      getWiki();
+     }
+   }
+
+   function onSearchDebounced(){
+    if (debounced.trim()) {
       getWiki();
      }
    }
@@ -44,13 +54,13 @@ const SearchBox = () => {
   // array with data: run at initial rendering and after every rerendering
   // if some state has changed since last rendering
 
-   useEffect(() =>{
-     clearTimeout(timeoutId);
-     onSearchDelay()
-   }, [input]);
+   useEffect(onSearchDebounced, [debounced, getWiki]);
 
    const onChange = (event) => {
-     setInput(event.target.value);
+     const value = event.target.value;
+     setInput(value);
+     clearTimeout(timeoutId);
+     setTimeoutId(setTimeout(()=>{setDebounced(value)}, 500));
    }
 
    return(
