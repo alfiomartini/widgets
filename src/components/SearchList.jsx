@@ -6,7 +6,7 @@ const SearchList = ({results}) => {
   const messageList = results.map((item, index) => {
     return(
       <a href={`https://en.wikipedia.org/?curid=${item.pageid}`} 
-        target='bkank_' key={index}>
+        target='bkank_' key={index} className='search-item'>
         <div className="ui message" >
           <div className="header">
             {item.title}

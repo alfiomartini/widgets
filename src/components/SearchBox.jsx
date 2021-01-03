@@ -5,23 +5,38 @@ import './SearchBox.css';
 const SearchBox = () => {
    const [ input, setInput] = useState('programming languages');
    const [ results, setResults] = useState([]);
+   const [ timeoutId, setTimeoutId] = useState(null);
 
    const API_URL = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&origin=*`
 
    function onSearch(){
-     fetch(`${API_URL}&srsearch=${input}`)
-     .then(resp => resp.json())
-     .then(data => {
-       const results = data.query.search;
-       console.log(results);
-       setResults(results);
-     })
-     .catch(error => console.log(error));     
+     if (!input){
+       return;
+     }
+
+     const getWiki = () => {
+      fetch(`${API_URL}&srsearch=${input}`)
+      .then(resp => resp.json())
+      .then(data => {
+        const results = data.query.search;
+        console.log(results);
+        setResults(results);
+      })
+      .catch(error => console.log(error));  
+     }
+
+     setTimeoutId(setTimeout(getWiki, 500));   
    }
 
-   useEffect(() => {
-    onSearch()
-  }, [input]);
+  //  when the array is empty: callback run at initial render
+  // without array at all: run at initial render and after every rerendering
+  // array with data: run at initial rendering and after every rerendering
+  // if some state has changed since last rendering
+
+   useEffect(() =>{
+     clearTimeout(timeoutId);
+     onSearch()
+   }, [input]);
 
    const onChange = (event) => {
      setInput(event.target.value);
