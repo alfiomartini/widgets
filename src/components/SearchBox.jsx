@@ -4,9 +4,10 @@ import './SearchBox.css';
 
 const SearchBox = () => {
    const [ input, setInput] = useState('programming languages');
+   const [ debounced, setDebounced] = useState(input);
    const [ results, setResults] = useState([]);
    const [ timeoutId, setTimeoutId] = useState(null);
-   const [ debounced, setDebounced] = useState('programming languages');
+   
 
    const API_URL = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&origin=*`
 
@@ -24,19 +25,7 @@ const SearchBox = () => {
      }, [API_URL, debounced]
    ) 
 
-  //  function onSearchDelay(){
-  //    if (!input.trim()){
-  //      return;
-  //    }
-
-  //    if (input.trim() && !results.length){ // first time rendering
-  //      getWiki()
-  //    } 
-  //    else{
-  //     setTimeoutId(setTimeout(getWiki, 500));  
-  //    }
-  //  }
-
+  
    function onSearch(){
      if (input.trim()) {
       getWiki();
