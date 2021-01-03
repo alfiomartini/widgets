@@ -9,23 +9,34 @@ const SearchBox = () => {
 
    const API_URL = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&origin=*`
 
-   function onSearch(){
-     if (!input){
+   const getWiki = () => {
+    fetch(`${API_URL}&srsearch=${input}`)
+    .then(resp => resp.json())
+    .then(data => {
+      const results = data.query.search;
+      console.log(results);
+      setResults(results);
+    })
+    .catch(error => console.log(error));  
+   }
+
+   function onSearchDelay(){
+     if (!input.trim()){
        return;
      }
 
-     const getWiki = () => {
-      fetch(`${API_URL}&srsearch=${input}`)
-      .then(resp => resp.json())
-      .then(data => {
-        const results = data.query.search;
-        console.log(results);
-        setResults(results);
-      })
-      .catch(error => console.log(error));  
+     if (input.trim() && !results.length){ // first time rendering
+       getWiki()
+     } 
+     else{
+      setTimeoutId(setTimeout(getWiki, 500));  
      }
+   }
 
-     setTimeoutId(setTimeout(getWiki, 500));   
+   function onSearch(){
+     if (input.trim()) {
+      getWiki();
+     }
    }
 
   //  when the array is empty: callback run at initial render
@@ -35,7 +46,7 @@ const SearchBox = () => {
 
    useEffect(() =>{
      clearTimeout(timeoutId);
-     onSearch()
+     onSearchDelay()
    }, [input]);
 
    const onChange = (event) => {
