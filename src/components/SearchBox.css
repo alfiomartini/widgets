@@ -1,8 +1,12 @@
+.search-box-body {
+  background-color: #404040;
+}
+
 .search-box {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 20px;
+  padding: 30px 30px 10px 30px;
 }
 
 .search-box input {

@@ -1,6 +1,7 @@
-import React from 'react';
-import Accordion from './components/Accordion';
-import SearchBox from './components/SearchBox'
+import React, {useState} from 'react';
+// import Accordion from './components/Accordion';
+import Dropdown from './components/Dropdown';
+// import SearchBox from './components/SearchBox';
 
 const items = [
   {
@@ -15,12 +16,30 @@ const items = [
     title: 'How do you use React',
     content: 'You use React by creating components'
   }
-]
+];
+
+const options = [
+  {
+    label: 'Red',
+    value: 'red'
+  },
+  {
+    label: 'Green',
+    value: 'green'
+  },
+  {
+    label: 'Blue',
+    value: 'blue'
+  }
+];
 
 const App = () => {
+  const [dropSelection, setSelection] = useState(options[0]);
   return(
     // <Accordion  items={items}/>
-    <SearchBox />
+    // <SearchBox />
+    <Dropdown options={options} 
+      selected={dropSelection} onSelection={setSelection} />
   )
 }
 

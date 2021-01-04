@@ -53,7 +53,7 @@ const SearchBox = () => {
    }
 
    return(
-    <div>
+    <div className='search-box-body'>
       <div className='search-box'>
         <div className="ui large icon input">
           <input type="text" placeholder="Search..." value={input} 
