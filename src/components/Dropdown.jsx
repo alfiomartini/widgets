@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dropdown.css';
 
 const Dropdown = ({options, selected, onSelection}) => {
 
   const [openMenu, setOpen] = useState(false);
+
+  // run only once
+  useEffect(() => {
+     document.body.addEventListener('click', () => {
+        console.log('body clicked');
+        setOpen(false);
+     }, {capture:true})
+  },[]);
+
   const optionsMenu = options.map((item, index) => {
     if (selected.value === item.value){
       return null; // shows nothing on the screen
