@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchList.css';
+import './css/SearchList.css';
 import ReactHtmlParser from 'react-html-parser';
 
 const SearchList = ({results}) => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
-import './Translator.css';
+import './css/Translator.css';
 import Field from './Field';
 import Languages from './Languages';
 import Translate from './Translate';

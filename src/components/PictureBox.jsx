@@ -1,5 +1,5 @@
 import { React, Component } from 'react';
-import './PictureBox.css';
+import './css/PictureBox.css';
 
 class PictureBox extends Component {
   constructor(props) {

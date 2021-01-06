@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from 'react';
-import './Translate.css';
+import './css/Translate.css';
 
 const API_KEY = process.env.REACT_APP_TRANS_API;
 

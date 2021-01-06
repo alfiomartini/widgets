@@ -2,7 +2,7 @@ import { React, Component } from 'react';
 import unsplash from './api/unsplash';
 import PictureBox from './PictureBox';
 import ImageList from './ImageList';
-import './Pictures.css';
+import './css/Pictures.css';
 
 class Pictures extends Component {
   constructor(){
