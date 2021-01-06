@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from './components/Accordion';
-import Dropdown from './components/Dropdown';
+import Pictures from './components/Pictures';
 import WikiSearch from './components/WikiSearch';
 import Translator from './components/Translator';
 
@@ -10,15 +10,15 @@ const showAccordion = () => {
   } 
 }
 
-const showSearchBox = () => {
+const showWikiSearch = () => {
   if (window.location.pathname === '/wiki'){
     return <WikiSearch />
   } 
 }
 
-const showDropdown = () => {
-  if (window.location.pathname === '/dropdown'){
-    return <Dropdown />
+const showPictures = () => {
+  if (window.location.pathname === '/pictures'){
+    return <Pictures />
   } 
 }
 
@@ -32,8 +32,8 @@ const App = () => {
   return(
     <div>
       {showAccordion()}
-      {showSearchBox()}
-      {showDropdown()}
+      {showWikiSearch()}
+      {showPictures()}
       {showTranslator()}
     </div>
   )
