@@ -23,7 +23,7 @@ const Dropdown = () => {
 
   // run only once
   useEffect(() => {
-     document.body.addEventListener('click', (event) => {
+    const onBodyClick = (event) => {
       //  if elemRef is the form element (hence inside Dropdown.jsx)
         if (elemRef.current.contains(event.target)){
           // do nothing. Follow what the code tells
@@ -31,7 +31,14 @@ const Dropdown = () => {
         }
         // we are clicking in the body. Close the dropdown.
         else setOpen(false);
-     }, {capture:true})
+     }
+
+     document.body.addEventListener('click', onBodyClick, {capture:true});
+    //  clean up function that runs when the component is rendered for the first time
+    //  and that is rendered in the app's next rendering
+     return () => {
+       document.body.removeEventListener('click', onBodyClick);
+     }
   },[]);
 
   const optionsMenu = options.map((item, index) => {
