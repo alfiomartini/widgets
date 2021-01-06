@@ -1,6 +1,6 @@
 import { React, Component } from 'react';
 import unsplash from './api/unsplash';
-import SearchBox from './SearchBox';
+import PictureBox from './PictureBox';
 import ImageList from './ImageList';
 import './Pictures.css';
 
@@ -45,7 +45,7 @@ class Pictures extends Component {
   render(){
     return (
       <div className="pictures">
-         <SearchBox  setInputText={this.onSearchSubmit} />
+         <PictureBox  setInputText={this.onSearchSubmit} />
          <ImageList photos={this.state.photos} /> 
       </div>
     );

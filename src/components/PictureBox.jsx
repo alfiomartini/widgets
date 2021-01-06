@@ -1,7 +1,7 @@
 import { React, Component } from 'react';
-import './SearchBox.css';
+import './PictureBox.css';
 
-class SearchBox extends Component {
+class PictureBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,4 +46,4 @@ class SearchBox extends Component {
   }
 }
 
-export default SearchBox;
+export default PictureBox;
