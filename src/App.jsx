@@ -1,12 +1,12 @@
 import React from 'react';
-import Accordion from './components/Accordion';
+import Youtube from './components/Youtube';
 import Pictures from './components/Pictures';
 import WikiSearch from './components/WikiSearch';
 import Translator from './components/Translator';
 
-const showAccordion = () => {
+const showYoutube = () => {
   if (window.location.pathname === '/'){
-    return <Accordion />
+    return <Youtube />
   } 
 }
 
@@ -31,7 +31,7 @@ const showTranslator = () => {
 const App = () => {
   return(
     <div>
-      {showAccordion()}
+      {showYoutube()}
       {showWikiSearch()}
       {showPictures()}
       {showTranslator()}

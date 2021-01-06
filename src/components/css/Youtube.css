@@ -1,0 +1,82 @@
+.youtube {
+  padding: 20px;
+  background-color: #202020;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.search-box {
+  grid-row: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.video-details {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.video-list {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+/* scroll bar of video list  */
+/* width */
+.video-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.video-list::-webkit-scrollbar-track {
+  /* inset h-offser v-offset blur color*/
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.video-list::-webkit-scrollbar-thumb {
+  background: lightblue;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.video-list::-webkit-scrollbar-thumb:hover {
+  background: navy;
+}
+
+/* Media queries */
+
+@media (max-width: 1024px) {
+  .app {
+    display: block;
+  }
+
+  .video-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-details iframe {
+    width: 300px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 450px) {
+  .video-item img {
+    width: 100px !important;
+    height: auto !important;
+  }
+}

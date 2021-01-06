@@ -1,0 +1,21 @@
+.video-item {
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer;
+}
+.video-item .content {
+  width: 200px !important;
+  text-transform: lowercase;
+}
+
+.video-item .content .header {
+  color: lightblue !important;
+  font-weight: 100 !important;
+  padding: 5px;
+}
+
+.video-item .content .description {
+  color: wheat !important;
+  font-weight: 100 !important;
+  padding: 0px 5px;
+}

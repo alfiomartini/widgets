@@ -1,0 +1,20 @@
+.video-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* aspect ratio: 16/9 */
+.video-details iframe {
+  width: 500px;
+  height: 282px;
+  border-radius: 10px;
+  border: 2px solid rgb(75, 80, 87);
+  margin-top: 30px;
+}
+
+.video-details .vd-description {
+  color: lightblue !important;
+  margin-top: 20px;
+  padding: 5px 10px;
+}
