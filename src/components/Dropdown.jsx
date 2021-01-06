@@ -1,15 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Dropdown.css';
 
-const Dropdown = ({options, selected, onSelection}) => {
+const options = [
+  {
+    label: 'Red',
+    value: 'red'
+  },
+  {
+    label: 'Green',
+    value: 'green'
+  },
+  {
+    label: 'Blue',
+    value: 'blue'
+  }
+];
 
+const Dropdown = () => {
+  const [selected, setSelection] = useState(options[0]);
   const [openMenu, setOpen] = useState(false);
+  const elemRef = useRef();
 
   // run only once
   useEffect(() => {
-     document.body.addEventListener('click', () => {
-        console.log('body clicked');
-        setOpen(false);
+     document.body.addEventListener('click', (event) => {
+      //  if elemRef is the form element (hence inside Dropdown.jsx)
+        if (elemRef.current.contains(event.target)){
+          // do nothing. Follow what the code tells
+          return;
+        }
+        // we are clicking in the body. Close the dropdown.
+        else setOpen(false);
      }, {capture:true})
   },[]);
 
@@ -18,14 +39,15 @@ const Dropdown = ({options, selected, onSelection}) => {
       return null; // shows nothing on the screen
     }
     return (
-      <div key={index} onClick={()=>onSelection(item)}
+      <div key={index} onClick={()=>setSelection(item)}
            className="item"> 
         {item.label}
       </div>
     )
   });
   return(
-    <div className="ui form">
+    // ref.current is a reference (pointer) to the div bellow
+    <div ref={elemRef} className="ui form">
       <div className="field">
         <label htmlFor="" className="label">Select Color</label>
         <div onClick={()=>setOpen(!openMenu)}
