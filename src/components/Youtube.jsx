@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBox from './SearchBox';
+import VideoBox from './VideoBox';
 import VideoList from './VideoList';
 import './css/Youtube.css';
 import VideoDetails from './VideoDetails';
@@ -38,7 +38,7 @@ class Youtube extends React.Component {
   render(){
     return(
       <div className='youtube'>
-        <SearchBox onSearchSubmit={this.onSearchSubmit} />
+        <VideoBox onSearchSubmit={this.onSearchSubmit} />
       {
         (this.state.selected) &&
         <VideoDetails selected={this.state.selected} />

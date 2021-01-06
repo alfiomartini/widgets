@@ -1,7 +1,7 @@
 import { React, Component } from 'react';
-import './SearchBox.css';
+import './css/VideoBox.css';
 
-class SearchBox extends Component {
+class VideoBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,4 +42,4 @@ class SearchBox extends Component {
   }
 }
 
-export default SearchBox;
+export default VideoBox;
