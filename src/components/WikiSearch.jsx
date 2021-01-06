@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useCallback } from 'react';
 import SearchList from './SearchList';
-import './SearchBox.css';
+import './WikiSearch.css';
 
-const SearchBox = () => {
+const WikiSearch = () => {
    const [ input, setInput] = useState('programming languages');
    const [ debounced, setDebounced] = useState(input);
    const [ results, setResults] = useState([]);
@@ -70,4 +70,4 @@ const SearchBox = () => {
    )
 }
 
-export default SearchBox;
+export default WikiSearch;

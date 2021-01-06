@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordion from './components/Accordion';
 import Dropdown from './components/Dropdown';
-import SearchBox from './components/SearchBox';
+import WikiSearch from './components/WikiSearch';
 import Translator from './components/Translator';
 
 const showAccordion = () => {
@@ -12,7 +12,7 @@ const showAccordion = () => {
 
 const showSearchBox = () => {
   if (window.location.pathname === '/wiki'){
-    return <SearchBox />
+    return <WikiSearch />
   } 
 }
 
