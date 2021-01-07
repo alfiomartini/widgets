@@ -27,10 +27,10 @@ class VideoBox extends Component {
   render(){
     return(
       // the author uses forms and onSubmit event listener
-      <div className='search-box'>
+      <div className='video-box'>
         <div className="ui small action input">
           <input type="text" 
-           placeholder="Image Search..."
+           placeholder="Search youtube.com ..."
            onChange={this.onInputChange}
            value = {this.state.input} 
            />

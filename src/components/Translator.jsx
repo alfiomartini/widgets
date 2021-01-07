@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import './css/Translator.css';
-import Field from './Field';
+import TranslatorBox from './TranslatorBox';
 import Languages from './Languages';
 import Translate from './Translate';
+ 
 
 function Translator() {
 
@@ -12,7 +13,7 @@ function Translator() {
   const [language, setLanguage] = useState('pt')
   return (
     <div className="translator">
-       <Field value={input} onChange={setInput}/>
+       <TranslatorBox value={input} onChange={setInput}/>
        <Languages langCode={language} onLanguageChange={setLanguage}/>
        <Translate langCode={language} text={input}/> 
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import './css/Field.css';
+import './css/Translator.css';
 
-const Field = (props) => {
+const TranslatorBox = (props) => {
   const { value, onChange } = props;
   return(
      <div>
@@ -17,4 +17,4 @@ const Field = (props) => {
   )
 }
 
-export default Field;
+export default TranslatorBox;

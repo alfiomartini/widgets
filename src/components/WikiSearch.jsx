@@ -56,7 +56,7 @@ const WikiSearch = () => {
     <div className='search-box-body'>
       <div className='search-box'>
         <div className="ui large icon input">
-          <input type="text" placeholder="Search..." value={input} 
+          <input type="text" placeholder="Search wikipedia.org ..." value={input} 
           onChange={onChange}
           />
           <i className="inverted circular search link icon"

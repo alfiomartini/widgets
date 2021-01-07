@@ -1,5 +1,5 @@
 import React from 'react';
-import './VideoItem.css';
+import './css/VideoItem.css';
 import ReactHtmlParser from 'react-html-parser';
 
 const VideoItem = (props) => {

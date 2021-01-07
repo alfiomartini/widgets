@@ -34,7 +34,7 @@ class PictureBox extends Component {
       <div className='search-box'>
         <div className="ui small action input">
           <input type="text" 
-           placeholder="Image Search..."
+           placeholder="Search unsplash.com ..."
            onChange={this.onInputChange}
            value = {this.state.input} 
            />

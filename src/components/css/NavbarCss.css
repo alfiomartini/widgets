@@ -1,0 +1,24 @@
+.menu-list {
+  padding: 10px;
+  margin: 5px 0px;
+  list-style-type: none;
+  display: flex;
+  background-color: #303030;
+}
+
+.menu-list li {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.menu-list li a {
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menu-list li a:hover {
+  color: #303030;
+  background-color: whitesmoke;
+}
