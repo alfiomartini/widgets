@@ -4,37 +4,25 @@ import Pictures from './components/Pictures';
 import WikiSearch from './components/WikiSearch';
 import Translator from './components/Translator';
 
-const showYoutube = () => {
-  if (window.location.pathname === '/'){
+const showComponent = (pathname) => {
+  if (pathname === '/'){
     return <Youtube />
-  } 
-}
-
-const showWikiSearch = () => {
-  if (window.location.pathname === '/wiki'){
-    return <WikiSearch />
-  } 
-}
-
-const showPictures = () => {
-  if (window.location.pathname === '/pictures'){
-    return <Pictures />
-  } 
-}
-
-const showTranslator = () => {
-  if (window.location.pathname === '/translate'){
+  }
+  if (pathname === '/translate'){
     return <Translator />
-  } 
+  }
+  if (pathname === '/pictures'){
+    return <Pictures />
+  }
+  if (pathname==='/wiki'){
+    return <WikiSearch />
+  }
 }
 
 const App = () => {
   return(
     <div>
-      {showYoutube()}
-      {showWikiSearch()}
-      {showPictures()}
-      {showTranslator()}
+       {showComponent(window.location.pathname)}
     </div>
   )
 }
