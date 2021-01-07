@@ -76,6 +76,13 @@
   }
 }
 
+@media (max-width: 330px) {
+  .video-details iframe {
+    width: 280px !important;
+    height: 158px !important;
+  }
+}
+
 @media (max-width: 450px) {
   .video-item img {
     width: 100px !important;

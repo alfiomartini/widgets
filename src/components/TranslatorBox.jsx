@@ -1,10 +1,10 @@
 import React from 'react';
-import './css/Translator.css';
+import './css/TranslatorBox.css';
 
 const TranslatorBox = (props) => {
   const { value, onChange } = props;
   return(
-     <div>
+     <div className='translator-box'>
        <h4>Enter Text</h4>
        <div className="input-group mb-3">
           <span className="input-group-text">Text</span>

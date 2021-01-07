@@ -24,5 +24,16 @@
 }
 
 .menu-list li a.active {
-  color: lightgreen !important;
+  color: lightgreen;
+}
+
+@media (max-width: 420px) {
+  .menu-list li {
+    font-size: 14px;
+  }
+
+  .menu-list li,
+  .menu-list li a {
+    padding: 5px 5px;
+  }
 }
