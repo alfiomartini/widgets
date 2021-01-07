@@ -9,7 +9,7 @@ const NavbarCss = ({options}) => {
       <li key={index} 
           onClick={() => setActive(window.location.pathname)}
           > 
-        <a href={window.location.origin + item.path}
+        <a href={window.location.href + item.path}
         className={`${item.path === active?'active':''}`}
         >
           {item.option}
