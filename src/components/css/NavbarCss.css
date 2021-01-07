@@ -22,3 +22,7 @@
   color: #303030;
   background-color: whitesmoke;
 }
+
+.menu-list li a.active {
+  color: lightgreen !important;
+}
