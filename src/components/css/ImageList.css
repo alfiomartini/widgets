@@ -5,6 +5,7 @@
   grid-auto-rows: 10px;
   gap: 0px 10px;
 }
+
 .imageList img {
   width: 250px;
   height: auto;

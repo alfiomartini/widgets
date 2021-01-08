@@ -5,7 +5,7 @@ class PictureBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input:''
+      input:this.props.input
     }
   }
 

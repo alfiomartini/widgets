@@ -18,7 +18,7 @@ const WikiSearch = () => {
       .then(resp => resp.json())
       .then(data => {
         const results = data.query.search;
-        console.log(results);
+        // console.log(results);
         setResults(results);
       })
       .catch(error => console.log(error));  

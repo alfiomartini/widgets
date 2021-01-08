@@ -26,10 +26,12 @@ class ImageCard extends React.Component{
   }
 
   render(){
-    const { description, image_url } = this.props.image;
+    const { description, image_url, download } = this.props.image;
     return (
       <div style = {{gridRowEnd: `span ${this.state.spans}`}}>
-        <img ref={this.imageRef} src={image_url} alt={description}/>
+        <a href={download} target="_blank" rel="noreferrer">
+            <img ref={this.imageRef} src={image_url} alt={description}/>
+        </a>
       </div>
     )
   }

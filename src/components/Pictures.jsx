@@ -33,7 +33,8 @@ class Pictures extends Component {
           image_url: item.urls.regular,
           description: item.alt_description,
           height:item.height,
-          width:item.width
+          width:item.width,
+          download:item.links.html
         }
       });
       // console.log(photos);
@@ -45,7 +46,7 @@ class Pictures extends Component {
   render(){
     return (
       <div className="pictures">
-         <PictureBox  setInputText={this.onSearchSubmit} />
+         <PictureBox  setInputText={this.onSearchSubmit} input={this.state.input}/>
          <ImageList photos={this.state.photos} /> 
       </div>
     );
