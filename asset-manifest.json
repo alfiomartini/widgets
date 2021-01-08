@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/widgets/static/css/main.0c18dd26.chunk.css",
-    "main.js": "/widgets/static/js/main.f48331c9.chunk.js",
-    "main.js.map": "/widgets/static/js/main.f48331c9.chunk.js.map",
+    "main.css": "/widgets/static/css/main.f93e9bf0.chunk.css",
+    "main.js": "/widgets/static/js/main.b00c5f1a.chunk.js",
+    "main.js.map": "/widgets/static/js/main.b00c5f1a.chunk.js.map",
     "runtime-main.js": "/widgets/static/js/runtime-main.918d1b58.js",
     "runtime-main.js.map": "/widgets/static/js/runtime-main.918d1b58.js.map",
     "static/css/2.90681da1.chunk.css": "/widgets/static/css/2.90681da1.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.50f4bc23.chunk.js.map": "/widgets/static/js/2.50f4bc23.chunk.js.map",
     "index.html": "/widgets/index.html",
     "static/css/2.90681da1.chunk.css.map": "/widgets/static/css/2.90681da1.chunk.css.map",
-    "static/css/main.0c18dd26.chunk.css.map": "/widgets/static/css/main.0c18dd26.chunk.css.map",
+    "static/css/main.f93e9bf0.chunk.css.map": "/widgets/static/css/main.f93e9bf0.chunk.css.map",
     "static/js/2.50f4bc23.chunk.js.LICENSE.txt": "/widgets/static/js/2.50f4bc23.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/widgets/static/media/outline-icons.ddae9b1b.woff"
   },
@@ -18,7 +18,7 @@
     "static/js/runtime-main.918d1b58.js",
     "static/css/2.90681da1.chunk.css",
     "static/js/2.50f4bc23.chunk.js",
-    "static/css/main.0c18dd26.chunk.css",
-    "static/js/main.f48331c9.chunk.js"
+    "static/css/main.f93e9bf0.chunk.css",
+    "static/js/main.b00c5f1a.chunk.js"
   ]
 }
