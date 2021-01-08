@@ -11,19 +11,20 @@
   font-size: 16px;
 }
 
-.menu-list li a {
+.menu-list li span {
   color: whitesmoke;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
-.menu-list li a:hover {
+.menu-list li span:hover {
   color: #303030;
   background-color: whitesmoke;
 }
 
-.menu-list li a.active {
+.menu-list li span.active {
   color: lightgreen;
 }
 
@@ -33,7 +34,7 @@
   }
 
   .menu-list li,
-  .menu-list li a {
+  .menu-list li span {
     padding: 5px 5px;
   }
 }

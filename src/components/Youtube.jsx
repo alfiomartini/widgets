@@ -14,7 +14,7 @@ class Youtube extends React.Component {
   }
 
   componentDidMount(){
-    this.onSearchSubmit('haskell for the imperative programmer');
+    this.onSearchSubmit('Nicole Cross');
   }
 
   onVideoSelect = (video) => {

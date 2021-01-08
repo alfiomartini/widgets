@@ -5,24 +5,6 @@ import WikiSearch from './components/WikiSearch';
 import Translator from './components/Translator';
 import NavbarCss from './components/NavbarCss'
 
-const showComponent = (pathname) => {
-  console.log('pathname', pathname);
-  if (pathname.endsWith('/') || pathname === ''){
-    return <Youtube />
-  }
-
-  if (pathname.endsWith('/translate') || pathname.endsWith('/translate/')){
-    return <Translator />
-  }
-
-  if (pathname.endsWith('/pictures') || pathname.endsWith('/pictures/')){
-    return <Pictures />
-  }
-
-  if (pathname.endsWith('/wiki') || pathname.endsWith('/wiki/')){
-    return <WikiSearch />
-  }
-}
 
 const menu = [
   {
@@ -46,15 +28,24 @@ const menu = [
 class App extends React.Component {
   constructor(){
     super();
-    this.URL_DEV = 'http://localhost:3000';
-    this.URL_PROD = 'https://alfiomartini.github.io/widgets'
+    this.state = {
+      component: 'Videos'
+    }
+  }
+
+  updateCurrent = (option) => {
+    this.setState({component:option});
   }
 
   render(){
+    const current = this.state.component;
     return(
       <div>
-         <NavbarCss options={menu} url={this.URL_PROD} />
-         {showComponent(window.location.pathname)}
+         <NavbarCss setSelection={this.updateCurrent} current={current} options={menu} />
+         {current === 'Videos' && <Youtube />}
+         {current === 'Translate' && <Translator />}
+         {current === 'Articles' && <WikiSearch />}
+         {current === 'Pictures' && <Pictures />}
       </div>
     )
   }

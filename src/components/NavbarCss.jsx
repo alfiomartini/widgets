@@ -1,19 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './css/NavbarCss.css';
-const NavbarCss = ({options, url}) => {
-  
-  const [active, setActive] = useState(window.location.pathname);
+const NavbarCss = ({setSelection, current, options}) => {
 
   const menuList = options.map((item, index) => {
     return (
       <li key={index} 
-          onClick={() => setActive(window.location.pathname)}
+          onClick={() => setSelection(item.option)}
           > 
-        <a href={url + item.path}
-        className={`${active.endsWith(item.path)?'active':''}`}
+        <span href="/"
+        className={`${current === item.option?'active':''}`}
         >
           {item.option}
-        </a>
+        </span>
       </li>
     )
   })
