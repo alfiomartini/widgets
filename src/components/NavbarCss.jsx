@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './css/NavbarCss.css';
-const NavbarCss = ({options}) => {
+const NavbarCss = ({options, url}) => {
   
   const [active, setActive] = useState(window.location.pathname);
 
@@ -9,8 +9,8 @@ const NavbarCss = ({options}) => {
       <li key={index} 
           onClick={() => setActive(window.location.pathname)}
           > 
-        <a href={window.location.href + item.path}
-        className={`${item.path === active?'active':''}`}
+        <a href={url + item.path}
+        className={`${active.endsWith(item.path)?'active':''}`}
         >
           {item.option}
         </a>

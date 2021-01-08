@@ -6,16 +6,20 @@ import Translator from './components/Translator';
 import NavbarCss from './components/NavbarCss'
 
 const showComponent = (pathname) => {
-  if (pathname === '/'){
+   
+  if (pathname.endsWith('/') || pathname === ''){
     return <Youtube />
   }
-  if (pathname === '/translate'){
+
+  if (pathname.endsWith('/translate') || pathname.endsWith('/translate/')){
     return <Translator />
   }
-  if (pathname === '/pictures'){
+
+  if (pathname.endsWith('/pictures') || pathname.endsWith('/pictures/')){
     return <Pictures />
   }
-  if (pathname==='/wiki'){
+
+  if (pathname.endsWith('/wiki') || pathname.endsWith('/wiki/')){
     return <WikiSearch />
   }
 }
@@ -39,13 +43,22 @@ const menu = [
   }
 ]
 
-const App = () => {
-  return(
-    <div>
-       <NavbarCss options={menu} />
-       {showComponent(window.location.pathname)}
-    </div>
-  )
+class App extends React.Component {
+  constructor(){
+    super();
+    this.URL_DEV = 'http://localhost:3000';
+    this.URL_PROD = 'https://alfiomartini.github.io/widgets'
+  }
+
+  render(){
+    return(
+      <div>
+         <NavbarCss options={menu} url={this.URL_PROD} />
+         {showComponent(window.location.pathname)}
+      </div>
+    )
+  }
+  
 }
 
 export default App;
