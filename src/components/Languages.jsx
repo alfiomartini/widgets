@@ -3,6 +3,7 @@ import './css/Languages.css';
 const LANGUAGES = [
   { label:"Afrikaans", value:'af' },
   { label:"Arabic", value:'ar' },
+  { label:"English", value:'en'},
   { label:"French", value:'fr' },
   { label:"German", value:'de' },
   { label:"Italian", value:'it' },
