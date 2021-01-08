@@ -5,13 +5,13 @@ const LANGUAGES = [
   { label:"Arabic", value:'ar' },
   { label:"French", value:'fr' },
   { label:"German", value:'de' },
-  { label:"Hindi", value:'hi' },
+  { label:"Italian", value:'it' },
   { label:"Japanese", value:'ja' },
+  { label:"Latin", value:'la'},
   { label:"Portuguese", value:'pt' },
   { label:"Russian", value:'ru' },
   { label:"Simplified Chinese", value:'zh-CN' },
-  { label:"Spanish", value:'es' },
-  { label:"Thai", value:'' },
+  { label:"Spanish", value:'es' }
 ]
 
 const Languages = (props) => {

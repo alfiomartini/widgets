@@ -3,3 +3,12 @@
   margin-left: 10px;
   padding: 10px;
 }
+
+.dropdown-menu li {
+  cursor: pointer;
+}
+
+.dropdown-menu li span:hover {
+  background-color: #6c757d;
+  color: whitesmoke;
+}
