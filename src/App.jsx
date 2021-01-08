@@ -6,7 +6,7 @@ import Translator from './components/Translator';
 import NavbarCss from './components/NavbarCss'
 
 const showComponent = (pathname) => {
-   
+  console.log('pathname', pathname);
   if (pathname.endsWith('/') || pathname === ''){
     return <Youtube />
   }

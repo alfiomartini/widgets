@@ -1,5 +1,6 @@
 {
   "name": "widgets",
+  "homepage": "https://alfiomartini.github.io/widgets",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
