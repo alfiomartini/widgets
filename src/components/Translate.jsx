@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import './css/Translate.css';
+import ReactHtmlParser from 'react-html-parser';
 
 const API_KEY = process.env.REACT_APP_TRANS_API;
 
@@ -11,7 +12,7 @@ const doTranslation = (input, languageCode) => {
   })
   .then(function (response) {
     const translatedText= response.data.translations[0].translatedText;
-    return translatedText;
+    return ReactHtmlParser(translatedText);
   })
   .catch(function (error) {
     console.log(error.message);
