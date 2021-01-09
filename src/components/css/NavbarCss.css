@@ -4,6 +4,9 @@
   list-style-type: none;
   display: flex;
   background-color: #303030;
+  position: sticky;
+  top: 5px;
+  z-index: 5;
 }
 
 .menu-list li {
