@@ -4,7 +4,7 @@ import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import './css/Translator.css';
 import TranslatorBox from './TranslatorBox';
 import Languages from './Languages';
-import Translate from './Translate';
+import Translate from './TranslateFlask';
  
 
 function Translator() {
