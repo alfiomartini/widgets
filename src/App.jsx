@@ -4,7 +4,7 @@ import Pictures from './components/PicturesFlask';
 import WikiSearch from './components/WikiSearch';
 import Translator from './components/Translator';
 import NavbarCss from './components/NavbarCss';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 
 const menu = [
@@ -27,26 +27,20 @@ const menu = [
 ]
 
 class App extends React.Component {
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     component: 'Videos'
-  //   }
-  // }
-
-  // updateCurrent = (option) => {
-  //   this.setState({component:option});
-  // }
-
+  
   render(){
-    // const current = this.state.component;
     return(
       <div>
          <NavbarCss   options={menu} />
-         <Route exact path='/widgets' component={Youtube} />
-         <Route path='/widgets/translate' component={Translator} />
-         <Route path='/widgets/articles' component={WikiSearch} />
-         <Route path='/widgets/pictures' component={Pictures} />
+         <Switch>
+            <Route exact path='/widgets' component={Youtube} />
+            <Route exact path='/widgets/'>
+              {window.history.pushState(null,'','/widgets')}
+            </Route>
+            <Route path='/widgets/translate' component={Translator} />
+            <Route path='/widgets/articles' component={WikiSearch} />
+            <Route path='/widgets/pictures' component={Pictures} />
+         </Switch>
       </div>
     )
   }
