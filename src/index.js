@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import 'semantic-ui-css/semantic.min.css';
 import './index.css';
+import {BrowserRouter} from 'react-router-dom';
 
 ReactDOM.render(
-  <App /> , document.getElementById('root')
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>, document.getElementById('root')
+  
   );

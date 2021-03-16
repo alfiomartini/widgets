@@ -3,49 +3,50 @@ import Youtube from './components/YoutubeFlask';
 import Pictures from './components/PicturesFlask';
 import WikiSearch from './components/WikiSearch';
 import Translator from './components/Translator';
-import NavbarCss from './components/NavbarCss'
+import NavbarCss from './components/NavbarCss';
+import {Route} from 'react-router-dom';
 
 
 const menu = [
   {
     option:'Videos',
-    path:'/'
+    path:'/widgets'
   },
   {
     option:'Translate',
-    path:'/translate'
+    path:'/widgets/translate'
   },
   {
     option:'Articles',
-    path:'/wiki'
+    path:'/widgets/articles'
   },
   {
     option:'Pictures',
-    path:'/pictures'
+    path:'/widgets/pictures'
   }
 ]
 
 class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      component: 'Videos'
-    }
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     component: 'Videos'
+  //   }
+  // }
 
-  updateCurrent = (option) => {
-    this.setState({component:option});
-  }
+  // updateCurrent = (option) => {
+  //   this.setState({component:option});
+  // }
 
   render(){
-    const current = this.state.component;
+    // const current = this.state.component;
     return(
       <div>
-         <NavbarCss setSelection={this.updateCurrent} current={current} options={menu} />
-         {current === 'Videos' && <Youtube />}
-         {current === 'Translate' && <Translator />}
-         {current === 'Articles' && <WikiSearch />}
-         {current === 'Pictures' && <Pictures />}
+         <NavbarCss   options={menu} />
+         <Route exact path='/widgets' component={Youtube} />
+         <Route path='/widgets/translate' component={Translator} />
+         <Route path='/widgets/articles' component={WikiSearch} />
+         <Route path='/widgets/pictures' component={Pictures} />
       </div>
     )
   }
