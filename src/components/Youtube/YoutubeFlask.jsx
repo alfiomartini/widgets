@@ -1,9 +1,9 @@
 import React from 'react';
 import VideoBox from './VideoBox';
 import VideoList from './VideoList';
-import './css/Youtube.css';
+import './Youtube.css';
 import VideoDetails from './VideoDetails';
-import {URL_PROD} from './settings'
+import {URL_PROD} from './../settings'
 
 class Youtube extends React.Component {
   constructor(){

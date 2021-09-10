@@ -1,9 +1,9 @@
 import React from 'react';
-import Youtube from './components/YoutubeFlask';
-import Pictures from './components/PicturesFlask';
-import WikiSearch from './components/WikiSearch';
-import Translator from './components/Translator';
-import NavbarCss from './components/NavbarCss';
+import Youtube from './components/Youtube/YoutubeFlask';
+import Pictures from './components/Pictures/PicturesFlask';
+import WikiSearch from './components/Wikipedia/WikiSearch';
+import Translator from './components/Translator/Translator';
+import NavbarCss from './components/Navbar/Navbar';
 import {Route, Switch} from 'react-router-dom';
 
 

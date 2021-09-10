@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback } from 'react';
 import SearchList from './SearchList';
-import './css/WikiSearch.css';
+import './WikiSearch.css';
 
 const WikiSearch = () => {
    const [ input, setInput] = useState('programming languages');

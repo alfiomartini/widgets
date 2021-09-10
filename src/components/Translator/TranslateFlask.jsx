@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from 'react';
-import './css/Translate.css';
+import './Translate.css';
 import ReactHtmlParser from 'react-html-parser';
-import {URL_PROD} from './settings';
+import {URL_PROD} from '../settings';
 
 const doTranslation = (input, languageCode) => {
  

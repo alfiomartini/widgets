@@ -1,5 +1,5 @@
 import { React, Component } from 'react';
-import './css/VideoBox.css';
+import './VideoBox.css';
 
 class VideoBox extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/TranslatorBox.css';
+import './TranslatorBox.css';
 
 const TranslatorBox = (props) => {
   const { value, onChange } = props;

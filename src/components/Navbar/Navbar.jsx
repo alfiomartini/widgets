@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import './css/NavbarCss.css';
+import './Navbar.css';
 import {Link} from 'react-router-dom';
 
-const NavbarCss = ({options}) => {
+const Navbar = ({options}) => {
   // console.log('pathname', window.location.pathname);
   const [current, setCurrent] = useState(window.location.pathname);
   const menuList = options.map((item, index) => {
@@ -24,4 +24,4 @@ const NavbarCss = ({options}) => {
   )
 }
 
-export default NavbarCss;
+export default Navbar;

@@ -1,8 +1,8 @@
 import { React, Component } from 'react';
-import unsplash from './api/unsplash';
 import PictureBox from './PictureBox';
 import ImageList from './ImageList';
-import './css/Pictures.css';
+import './Pictures.css';
+import {URL_PROD} from '../settings';
 
 class Pictures extends Component {
   constructor(){
@@ -20,14 +20,11 @@ class Pictures extends Component {
 
   onSearchSubmit = (input) => {
     this.setState({input:input});
-    unsplash.get('/search/photos', {
-      params:{
-        query: input,
-        per_page:30
-      }
-    })
+    fetch(`${URL_PROD}/unsplash/${input}`)
+    .then(resp => resp.json())
     .then(resp => {
-      const photos = resp.data.results;
+      // console.log('resp', resp);
+      const photos = resp.results;
       const photosList = photos.map(item => {
         return {
           image_url: item.urls.regular,

@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/Languages.css';
+import './Languages.css';
 
 const LANGUAGES = [
   { label:"Afrikaans", value:'af' },

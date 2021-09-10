@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/VideoDetails.css';
+import './VideoDetails.css';
 import ReactHtmlParser from 'react-html-parser';
 
 const formatDate = (dateStr) => {
