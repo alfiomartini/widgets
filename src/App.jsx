@@ -3,43 +3,44 @@ import Youtube from './components/Youtube/YoutubeFlask';
 import Pictures from './components/Pictures/PicturesFlask';
 import WikiSearch from './components/Wikipedia/WikiSearch';
 import Translator from './components/Translator/Translator';
-import NavbarCss from './components/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import {Route, Switch} from 'react-router-dom';
 
 
-const menu = [
+const pathnames = [
   {
-    option:'Videos',
-    path:'/widgets'
+    routeName:'Videos',
+    path:'/videos'
   },
   {
-    option:'Translate',
-    path:'/widgets/translate'
+    routeName:'Translate',
+    path:'/translate'
   },
   {
-    option:'Articles',
-    path:'/widgets/articles'
+    routeName:'Articles',
+    path:'/articles'
   },
   {
-    option:'Pictures',
-    path:'/widgets/pictures'
+    routeName:'Pictures',
+    path:'/pictures'
   }
 ]
 
 class App extends React.Component {
+
+  componentDidMount(){
+  }
   
   render(){
     return(
       <div>
-         <NavbarCss   options={menu} />
+         <Navbar pathnames = {pathnames}/>
          <Switch>
-            <Route exact path='/widgets' component={Youtube} />
-            <Route exact path='/widgets/'>
-              {window.history.pushState(null,'','/widgets')}
-            </Route>
-            <Route path='/widgets/translate' component={Translator} />
-            <Route path='/widgets/articles' component={WikiSearch} />
-            <Route path='/widgets/pictures' component={Pictures} />
+            <Route exact path = '/' component = {Youtube} />
+            <Route path='/videos' component={Youtube} />
+            <Route path='/translate' component={Translator} />
+            <Route path='/articles' component={WikiSearch} />
+            <Route path='/pictures' component={Pictures} />
          </Switch>
       </div>
     )
