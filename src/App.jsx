@@ -10,19 +10,19 @@ import {Route, Switch} from 'react-router-dom';
 const pathnames = [
   {
     routeName:'Videos',
-    path:'/videos'
+    pathname:'/videos'
   },
   {
     routeName:'Translate',
-    path:'/translate'
+    pathname:'/translate'
   },
   {
     routeName:'Articles',
-    path:'/articles'
+    pathname:'/articles'
   },
   {
     routeName:'Pictures',
-    path:'/pictures'
+    pathname:'/pictures'
   }
 ]
 

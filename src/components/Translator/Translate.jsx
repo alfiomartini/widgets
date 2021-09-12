@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import './css/Translate.css';
+// Takes an HTML string and returns equivalent React elements
 import ReactHtmlParser from 'react-html-parser';
 
 const API_KEY = process.env.REACT_APP_TRANS_API;

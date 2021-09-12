@@ -5,9 +5,14 @@ class PictureBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input:this.props.input
+      input:'night'
     }
   }
+  
+  // componentDidMount(){
+  //   // this.setState({...this.state, input:this.props.input});
+  //   this.props.onSearchSubmit(this.state.input);
+  // }
 
   onInputChange = (event) => {
     const value = event.target.value;
@@ -23,12 +28,13 @@ class PictureBox extends Component {
 
   onClicked = () =>{
     const  input  = this.state.input;
-    const { setInputText } = this.props;
-    setInputText(input);
+    const { onSearchSubmit } = this.props;
+    onSearchSubmit(input);
   }
 
 
   render(){
+    // console.log('picture box input', this.state.input);
     return(
       // the author uses forms and onSubmit event listener
       <div className='search-box'>

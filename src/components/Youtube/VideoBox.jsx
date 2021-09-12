@@ -5,7 +5,7 @@ class VideoBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search:''
+      search:'Nicole Cross'
     }
   }
 
@@ -32,7 +32,7 @@ class VideoBox extends Component {
           <input type="text" 
            placeholder="Search youtube.com ..."
            onChange={this.onInputChange}
-           value = {this.state.input} 
+           value = {this.state.search} 
            />
           <button className="ui button"
            onClick = {this.onSearch}>Search</button>

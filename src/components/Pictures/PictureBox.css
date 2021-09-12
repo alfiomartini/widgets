@@ -7,3 +7,16 @@
 .search-box .input {
   margin: 20px;
 }
+
+@media (max-width: 450px) {
+  .search-box .input {
+    width: 200px;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .search-box button .ui .button {
+    width: 70px;
+    text-align: center;
+  }
+}

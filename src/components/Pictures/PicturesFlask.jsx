@@ -8,7 +8,7 @@ class Pictures extends Component {
   constructor(){
     super();
     this.state ={
-      input:'',
+      input:'night',
       photos:[]
     };
   }
@@ -43,7 +43,7 @@ class Pictures extends Component {
   render(){
     return (
       <div className="pictures">
-         <PictureBox  setInputText={this.onSearchSubmit} input={this.state.input}/>
+         <PictureBox  onSearchSubmit={this.onSearchSubmit} input={this.state.input}/>
          <ImageList photos={this.state.photos} /> 
       </div>
     );

@@ -3,6 +3,8 @@
   margin: 5px 0px;
   list-style-type: none;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   background-color: #303030;
   position: sticky;
   top: 5px;
@@ -36,8 +38,7 @@
     font-size: 14px;
   }
 
-  .menu-list li,
-  .menu-list li span {
+  .menu-list li {
     padding: 5px 5px;
   }
 }
