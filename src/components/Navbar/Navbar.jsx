@@ -3,7 +3,6 @@ import './Navbar.css';
 import {Link} from 'react-router-dom';
 
 const Navbar = ({pathnames}) => {
-  // console.log('pathname', window.location.pathname);
   const [current, setCurrent] = useState(window.location.pathname);
   const menuList = pathnames.map((item, index) => {
     const activeClass = (item) => {
@@ -14,6 +13,8 @@ const Navbar = ({pathnames}) => {
       
     }
     // clicking on a link also updates the path prop of Route component
+    // In the Link component the 'to' property is a string (pathname) as
+    // defined in the Route Component
     return (
       <li key={index}> 
         <Link to={item.pathname}

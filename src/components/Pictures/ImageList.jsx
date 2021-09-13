@@ -6,7 +6,6 @@ class ImageList extends Component {
 
   photos = () => {
     const {photos} = this.props;
-    // console.log(photos);
     const imgs = photos.map((item, index) => {
       return (
         <ImageCard image={item} key={index}/>

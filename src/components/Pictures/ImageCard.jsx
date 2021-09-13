@@ -21,6 +21,7 @@ class ImageCard extends React.Component{
     // console.log(this.imageRef);
     const height = this.imageRef.current.clientHeight;
     // 10 is the value of grid-auto-rows in ImageList.css
+    // +1 means plus 10px (grid-auto-row value in css file), the row height size
     const spans = Math.ceil((height / 10) + 1);
     this.setState({spans:spans});
   }
@@ -28,7 +29,7 @@ class ImageCard extends React.Component{
   render(){
     const { description, image_url, download } = this.props.image;
     return (
-      <div style = {{gridRowEnd: `span ${this.state.spans}`}}>
+      <div className = 'image-card' style = {{gridRowEnd: `span ${this.state.spans}`}}>
         <a href={download} target="_blank" rel="noreferrer">
             <img ref={this.imageRef} src={image_url} alt={description}/>
         </a>

@@ -29,14 +29,12 @@ class  WikiSearch extends React.Component {
    
   
   // user arrow function not to loose this binding
-  // now is lexical (it binds to the class instance)
+  // now it is lexical (it binds to the class instance)
    onSearch = () =>{
      if (this.state.input.trim()) {
       this.getWiki();
      }
    }
-
-    
 
    onChange = (event) => {
      const value = event.target.value;
